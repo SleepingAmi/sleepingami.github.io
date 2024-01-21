@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ami's Personal Webpage</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background: linear-gradient(to right, #8e44ad, #e91e63);
+        }
+
+        .fakeout {
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.28);
+            border-radius: 8px;
+        }
+
+        header {
+            text-align: center;
+            color: #fff;
+        }
+
+        h1, h2 {
+            color: #4CAF50;
+            text-shadow: 0 0 10px rgba(76, 175, 80, 0.4);
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .contact-info, .portfolio {
+            margin-top: 20px;
+            color: #fff;
+        }
+
+        li {
+            color: white;
+        }
+
+        .projectos {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .projectos li {
+            background: rgba(0, 0, 255, 0.32);
+            padding: 15px;
+            border-radius: 5px;
+            margin: 0 0 20px;
+            width: calc(48% - 20px);
+            box-sizing: border-box;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .projectos li:hover {
+            background: rgba(0, 100, 250, 0.32);
+        }
+
+        a {
+            text-decoration: none;
+            color: rgb(0, 244, 55);
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        @media screen and (max-width: 768px) {
+            .projectos li {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="fakeout">
+
+        <header>
+            <h1>Hello, I'm Ami!</h1>
+            <p>AKA: SleepingAmi, SleepyAmi</p>
+        </header>
+    
+        <section>
+            <h2>About Me</h2>
+            <p>I'm an asexual female programmer, and I go by the pronouns they/them. I have been developing full-stack for 2 years now, and I've contributed to various projects.</p>
+            <p>Fun Facts:
+                <ul>
+                    <li>Cute anime programmer</li>
+                    <li>Plays a lot of Genshin Impact</li>
+                    <li>Created a stable diffusion model for cute anime scenery</li>
+                </ul>
+            </p>
+        </section>
+    
+        <section>
+            <h2>Portfolio</h2>
+            <ul class="portfolio">
+                <li>Waitor at Can Bigotis (2020-2024)</li>
+                <li>Developer at Bottombots (2024-present)</li>
+                <li>Owner and Founder of The Hydraulisc Network</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Projects</h2>
+            <ul class="projectos">
+                <li onclick="redirectPage('https://common-codes.github.io/projects')">Crispy-Chat</li>
+                <li onclick="redirectPage('https://hydraulisc.net/welcome')">Hydraulisc</li>
+                <li onclick="redirectPage('https://starplace.onrender.com')">StarPlace</li>
+                <li onclick="redirectPage('https://about.hydraulisc.net')">PocketLive</li>
+            </ul>
+        </section>
+    
+        <section class="contact-info">
+            <h2>Contact</h2>
+            <p>Contact me via email on <a href="mailto:sleeping.ami@hydraulisc.net">sleeping.ami@hydraulisc.net</a></p>
+            <p>Find me on:
+                <ul>
+                    <li><a href="https://instagram.com/sleeping.ami" target="_blank">Instagram</a> and <a href="https://www.threads.net/@sleeping.ami" target="_blank">Threads</a>: @sleeping.ami</li>
+                    <li>Hydraulisc: <a href="https://hydraulisc.net/user/MupH0078JgXlk3TDZ5L6Wsaz2mf1" target="_blank">@sleepingami#0001</a></li>
+                    <li>Fediverse: <a href="https://miruku.cafe/@SleepingAmi" target="_blank">@SleepingAmi@miruku.cafe</a></li>
+                    <li>Matrix: @sleepingami:miruku.cafe</li>
+                    <li>Discord: @sleepingami</li>
+                </ul>
+            </p>
+        </section>
+    </div>
+    <script>
+        function redirectPage(link) {
+            window.open(link, '_blank');
+        }
+    </script>
+
+</body>
+
+</html>
