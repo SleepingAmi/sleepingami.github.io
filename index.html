@@ -10,37 +10,41 @@
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
             margin: 20px;
-            background: linear-gradient(to right, #8e44ad, #e91e63);
+            background: linear-gradient(to right, #2c3e50, #34495e);
+            color: #ecf0f1;
+            transition: background 0.3s ease, color 0.3s ease;
         }
 
         .fakeout {
             padding: 1rem;
-            background: rgba(0, 0, 0, 0.28);
+            background: rgba(0, 0, 0, 0.6);
             border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+            color: #ecf0f1;
         }
 
-        header {
+        .lighter-theme {
+          background: linear-gradient(to right, #8e44ad, #f368e0);
+          color: #333;
+        }
+
+        .light-theme {
+          background: rgba(0, 0, 0, 0.28);
+        }
+
+        header, h1, h2 {
             text-align: center;
-            color: #fff;
-        }
-
-        h1, h2 {
             color: #4CAF50;
-            text-shadow: 0 0 10px rgba(76, 175, 80, 0.4);
+            text-shadow: 0 0 10px rgba(46, 204, 113, 0.6);
         }
 
         p {
             margin-bottom: 20px;
-            color: #fff;
         }
 
         .contact-info, .portfolio {
             margin-top: 20px;
-            color: #fff;
-        }
-
-        li {
-            color: white;
         }
 
         .projectos {
@@ -53,7 +57,7 @@
         }
 
         .projectos li {
-            background: rgba(0, 0, 255, 0.32);
+            background: rgba(46, 204, 113, 0.2);
             padding: 15px;
             border-radius: 5px;
             margin: 0 0 20px;
@@ -61,88 +65,165 @@
             box-sizing: border-box;
             cursor: pointer;
             text-align: center;
+            transition: background 0.3s ease;
         }
 
         .projectos li:hover {
-            background: rgba(0, 100, 250, 0.32);
+            background: rgba(46, 204, 113, 0.6);
         }
 
         a {
             text-decoration: none;
-            color: rgb(0, 244, 55);
+            color: #3498db;
         }
 
         a:hover {
             text-decoration: underline;
         }
 
+        .toggle-theme-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .toggle-theme {
+            background: #3498db;
+            border: none;
+            border-radius: 20px;
+            width: 50px;
+            height: 25px;
+            margin-left: 10px;
+            cursor: pointer;
+            outline: none;
+            overflow: hidden;
+            transition: background 0.3s ease;
+        }
+
+        .toggle-theme .slider {
+            position: relative;
+            width: 200%;
+            height: 100%;
+            border-radius: 20px;
+            background: #ecf0f1;
+            transition: transform 0.3s ease;
+        }
+
+        .toggle-theme .slider:before {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            border-radius: 20px;
+            background: #2c3e50;
+            transition: transform 0.3s ease;
+        }
+
+        .light-theme .toggle-theme .slider {
+            background: #ecf0f1;
+        }
+
+        .light-theme .toggle-theme .slider:before {
+            transform: translateX(100%);
+            background: #2c3e50; /* Updated color for the light theme */
+        }
+
+        .toggle-theme:hover {
+            background: #2980b9;
+        }
+
         @media screen and (max-width: 768px) {
-            .projectos li {
-                width: 100%;
-            }
+          .projectos li {
+            width: 100%;
+          }
         }
     </style>
 </head>
 
 <body>
-    <div class="fakeout">
-
-        <header>
-            <h1>Hello, I'm Ami!</h1>
-            <p>AKA: SleepingAmi, SleepyAmi</p>
-        </header>
-    
-        <section>
-            <h2>About Me</h2>
-            <p>I'm an asexual female programmer, and I go by the pronouns they/them. I have been developing full-stack for 2 years now, and I've contributed to various projects.</p>
-            <p>Fun Facts:
-                <ul>
-                    <li>Cute anime programmer</li>
-                    <li>Plays a lot of Genshin Impact</li>
-                    <li>Created a stable diffusion model for cute anime scenery</li>
-                </ul>
-            </p>
-        </section>
-    
-        <section>
-            <h2>Portfolio</h2>
-            <ul class="portfolio">
-                <li>Waitor at Can Bigotis (2020-2024)</li>
-                <li>Developer at Bottombots (2024-present)</li>
-                <li>Owner and Founder of The Hydraulisc Network</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Projects</h2>
-            <ul class="projectos">
-                <li onclick="redirectPage('https://common-codes.github.io/projects')">Crispy-Chat</li>
-                <li onclick="redirectPage('https://hydraulisc.net/welcome')">Hydraulisc</li>
-                <li onclick="redirectPage('https://starplace.onrender.com')">StarPlace</li>
-                <li onclick="redirectPage('https://about.hydraulisc.net')">PocketLive</li>
-            </ul>
-        </section>
-    
-        <section class="contact-info">
-            <h2>Contact</h2>
-            <p>Contact me via email on <a href="mailto:sleeping.ami@hydraulisc.net">sleeping.ami@hydraulisc.net</a></p>
-            <p>Find me on:
-                <ul>
-                    <li><a href="https://instagram.com/sleeping.ami" target="_blank">Instagram</a> and <a href="https://www.threads.net/@sleeping.ami" target="_blank">Threads</a>: @sleeping.ami</li>
-                    <li>Hydraulisc: <a href="https://hydraulisc.net/user/MupH0078JgXlk3TDZ5L6Wsaz2mf1" target="_blank">@sleepingami#0001</a></li>
-                    <li>Fediverse: <a href="https://miruku.cafe/@SleepingAmi" target="_blank">@SleepingAmi@miruku.cafe</a></li>
-                    <li>Matrix: @sleepingami:miruku.cafe</li>
-                    <li>Discord: @sleepingami</li>
-                </ul>
-            </p>
-        </section>
+  <div class="toggle-theme-container">
+        <span>Dark</span>
+        <label class="toggle-theme" onclick="toggleTheme()">
+            <div class="slider"></div>
+        </label>
+        <span>Light</span>
     </div>
-    <script>
-        function redirectPage(link) {
-            window.open(link, '_blank');
-        }
-    </script>
 
+  <div class="fakeout">
+
+      <header>
+          <h1>Hello, I'm Ami!</h1>
+          <p>AKA: SleepingAmi, SleepyAmi</p>
+      </header>
+  
+      <section>
+          <h2>About Me</h2>
+          <p>I'm an asexual female programmer, and I go by the pronouns they/them. I have been developing full-stack for 2 years now, and I've contributed to various projects.</p>
+          <p>Fun Facts:
+              <ul>
+                  <li>Cute anime programmer</li>
+                  <li>Plays a lot of Genshin Impact</li>
+                  <li>Created a stable diffusion model for cute anime scenery</li>
+              </ul>
+          </p>
+      </section>
+  
+      <section>
+          <h2>Portfolio</h2>
+          <ul class="portfolio">
+              <li>Waitor at Can Bigotis (2021-2024)</li>
+              <li>Developer at Bottombots (2024-present)</li>
+              <li>Owner and Founder of The Hydraulisc Network</li>
+          </ul>
+      </section>
+
+      <section>
+          <h2>Projects</h2>
+          <ul class="projectos">
+              <li onclick="redirectPage('https://common-codes.github.io/projects')">Crispy-Chat</li>
+              <li onclick="redirectPage('https://hydraulisc.net/welcome')">Hydraulisc</li>
+              <li onclick="redirectPage('https://starplace.onrender.com')">StarPlace</li>
+              <li onclick="redirectPage('https://about.hydraulisc.net')">PocketLive</li>
+          </ul>
+      </section>
+  
+      <section class="contact-info">
+          <h2>Contact</h2>
+          <p>Contact me via email on <a href="mailto:sleeping.ami@hydraulisc.net">sleeping.ami@hydraulisc.net</a></p>
+          <p>Find me on:
+              <ul>
+                  <li><a href="https://instagram.com/sleeping.ami" target="_blank">Instagram</a> and <a href="https://www.threads.net/@sleeping.ami" target="_blank">Threads</a>: @sleeping.ami</li>
+                  <li>Hydraulisc: <a href="https://hydraulisc.net/user/MupH0078JgXlk3TDZ5L6Wsaz2mf1" target="_blank">@sleepingami#0001</a></li>
+                  <li>Fediverse: <a href="https://miruku.cafe/@SleepingAmi" target="_blank">@SleepingAmi@miruku.cafe</a></li>
+                  <li>Matrix: @sleepingami:miruku.cafe</li>
+                  <li>Discord: @sleepingami</li>
+              </ul>
+          </p>
+      </section>
+  </div>
+  <script>
+      function redirectPage(link) {
+          window.open(link, '_blank');
+      }
+
+      function toggleTheme() {
+            const body = document.body;
+            const fakeout = document.querySelector('.fakeout');
+            const slider = document.querySelector('.toggle-theme .slider');
+
+            body.classList.toggle('lighter-theme');
+            fakeout.classList.toggle('light-theme');
+
+            // Update slider position based on the current theme
+            if (body.classList.contains('lighter-theme')) {
+                slider.style.transform = 'translateX(100%)';
+            } else {
+                slider.style.transform = 'translateX(0)';
+            }
+        }
+  </script>
 </body>
 
 </html>
