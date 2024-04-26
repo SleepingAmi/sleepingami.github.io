@@ -5,42 +5,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ami's Personal Webpage</title>
+    <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/hydraulisc.appspot.com/o/143962821.png?alt=media&token=9b0db058-ca28-4bf7-9c48-e35b2a9d7344">
+    <link rel="icon" type="image/png" href="https://firebasestorage.googleapis.com/v0/b/hydraulisc.appspot.com/o/143962821.png?alt=media&token=9b0db058-ca28-4bf7-9c48-e35b2a9d7344">
     <style>
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
-            margin: 30px 20px;
-            background: linear-gradient(to right, #2c3e50, #34495e);
-            color: #ecf0f1;
+            margin: 30px 10px;
+            background: rgba(0, 0, 0, 0.6);
+            color: #b4befe;
             transition: background 0.3s ease, color 0.3s ease;
         }
 
         .fakeout {
             padding: 1rem;
-            background: rgba(0, 0, 0, 0.6);
+            background: #1e1e2e;
             border-radius: 8px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
-            transition: background 0.3s ease, box-shadow 0.3s ease;
-            color: #ecf0f1;
+            box-shadow: 0 0 20px rgba(17, 17, 27, 0.75);
+            color: #b4befe;
+            max-width: 920px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 3rem;
         }
 
         .lighter-theme {
-          background: linear-gradient(to right, #8e44ad, #f368e0);
-          /*box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); */
-          color: #000;
+          background: #eff1f5;
         }
-
+        
         .light-theme {
-          background: rgba(0, 0, 0, 0.28);
+            background: #dce0e8;
+            color: #7287fd;
         }
 
-        header, h1 {
+        .light-theme header, .light-theme h1, .light-theme h2 {
+            background: #dce0e8;
+            color: #7287fd;
+            text-shadow: 0 0 3px #7287fd;
+        }
+
+        .light-theme a {
+            color: #006880;
+        }
+
+        header, h1, h2 {
             text-align: center;
         }
 
         header, h1, h2 {
-            color: #4CAF50;
-            text-shadow: 0 0 10px rgba(46, 204, 113, 0.6);
+            color: #b4befe;
+            text-shadow: 0 0 3px #b4befe;
         }
 
         p {
@@ -61,7 +75,7 @@
         }
 
         .projectos li {
-            background: rgba(46, 204, 113, 0.2);
+            background: #6c7086;
             padding: 15px;
             border-radius: 5px;
             margin: 0 0 20px;
@@ -73,7 +87,7 @@
         }
 
         .projectos li:hover {
-            background: rgba(46, 204, 113, 0.6);
+            background: rgba(17, 17, 27, 0.75);
         }
 
         a {
@@ -85,10 +99,21 @@
             text-decoration: underline;
         }
 
+        .toggrealheader {
+            width: 100%;
+            border-bottom: 1.5px solid #000;
+            position: fixed;
+            top: 0px;
+            left: 0;
+            backdrop-filter: blur(10px);
+            height: 33px;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.1));
+        }
+        
         .toggle-theme-container {
-            position: absolute;
-            top: 2.5px;
-            left: 32px;
+            position: fixed;
+            top: 2px;
+            right: 32px;
             display: flex;
             align-items: center;
         }
@@ -132,7 +157,6 @@
 
         .light-theme .toggle-theme .slider:before {
             transform: translateX(100%);
-            background: #3498db; /* Updated color for the light theme */
         }
 
         .toggle-theme:hover {
@@ -148,20 +172,22 @@
 </head>
 
 <body>
-    <div class="toggle-theme-container">
-        <svg width="28px" height="28px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g id="SVGRepo_bgCarrier" stroke-width="0"/>
-            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-            <g id="SVGRepo_iconCarrier"><path d="M3.32031 11.6835C3.32031 16.6541 7.34975 20.6835 12.3203 20.6835C16.1075 20.6835 19.3483 18.3443 20.6768 15.032C19.6402 15.4486 18.5059 15.6834 17.3203 15.6834C12.3497 15.6834 8.32031 11.654 8.32031 6.68342C8.32031 5.50338 8.55165 4.36259 8.96453 3.32996C5.65605 4.66028 3.32031 7.89912 3.32031 11.6835Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>
-        </svg>
-        <label class="toggle-theme" onclick="toggleTheme()">
-            <div class="slider"></div>
-        </label>
-        <svg width="28px" height="28px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g id="SVGRepo_bgCarrier" stroke-width="0"/>
-            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-            <g id="SVGRepo_iconCarrier"> <path d="M12 3V4M12 20V21M4 12H3M6.31412 6.31412L5.5 5.5M17.6859 6.31412L18.5 5.5M6.31412 17.69L5.5 18.5001M17.6859 17.69L18.5 18.5001M21 12H20M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> </g>
-        </svg>
+    <div class="toggrealheader">
+        <div class="toggle-theme-container">
+            <svg width="28px" height="28px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                <g id="SVGRepo_iconCarrier"><path d="M3.32031 11.6835C3.32031 16.6541 7.34975 20.6835 12.3203 20.6835C16.1075 20.6835 19.3483 18.3443 20.6768 15.032C19.6402 15.4486 18.5059 15.6834 17.3203 15.6834C12.3497 15.6834 8.32031 11.654 8.32031 6.68342C8.32031 5.50338 8.55165 4.36259 8.96453 3.32996C5.65605 4.66028 3.32031 7.89912 3.32031 11.6835Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>
+            </svg>
+            <label class="toggle-theme" onclick="toggleTheme()">
+                <div class="slider"></div>
+            </label>
+            <svg width="28px" height="28px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                <g id="SVGRepo_iconCarrier"> <path d="M12 3V4M12 20V21M4 12H3M6.31412 6.31412L5.5 5.5M17.6859 6.31412L18.5 5.5M6.31412 17.69L5.5 18.5001M17.6859 17.69L18.5 18.5001M21 12H20M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> </g>
+            </svg>
+        </div>
     </div>
 
   <div class="fakeout">
@@ -177,8 +203,9 @@
           <p>Fun Facts:
               <ul>
                   <li>Cute anime programmer</li>
-                  <li>Plays a lot of Genshin Impact</li>
+                  <li>Plays a lot of Genshin Impact (and other videogames)</li>
                   <li>Created a stable diffusion model for cute anime scenery</li>
+                  <li>Better at backend than frontend :)</li>
               </ul>
           </p>
       </section>
@@ -186,16 +213,17 @@
       <section>
           <h2>Portfolio</h2>
           <ul class="portfolio">
-              <li>Waitor at Can Bigotis (2021-2024)</li>
-              <li>Developer at Bottombots (2024-present)</li>
               <li>Owner and Founder of The Hydraulisc Network</li>
+              <li>Waitress at A Café (2021-2024)</li>
+              <li>Developer at Bottombots (2024)</li>
+              <li>Developer of the Virtual Waifu DLC Discord Bot (Virtual Waifu Bootleg?)</li>
           </ul>
       </section>
 
       <section>
           <h2>Projects</h2>
           <ul class="projectos">
-              <li onclick="redirectPage('https://common-codes.github.io/projects')">Crispy-Chat</li>
+              <li onclick="redirectPage('https://discord.com/oauth2/authorize?client_id=1231985408028573841&scope=bot%20applications.commands&permissions=388294')">Waifu DLC</li>
               <li onclick="redirectPage('https://hydraulisc.net/welcome')">Hydraulisc</li>
               <li onclick="redirectPage('https://starplace.onrender.com')">StarPlace</li>
               <li onclick="redirectPage('https://about.hydraulisc.net')">PocketLive</li>
@@ -214,6 +242,10 @@
                   <li>Discord: @sleepingami</li>
               </ul>
           </p>
+          <br>
+          <div style="text-align: center;">
+              <p style="font-size: small;"><i>Site made (I believe) using a modified version of the Catppuccin Mocha (for the Dark Theme) and Catppuccin Latte (for the Light Theme) themes. Maybe. Not 100% sure.</i></p>
+          </div>
       </section>
   </div>
   <script>
