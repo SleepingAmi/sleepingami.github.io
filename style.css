@@ -1,0 +1,185 @@
+/* idk I got bored and decided to remake most of the site one tuesday afternoon */
+:root {
+    --base: #1e1e2e;
+    --mantle: #181825;
+    --crust: #11111b;
+    --text: #cdd6f4;
+    --headers: #a6adc8;
+    --links: #89b4fa;
+    --overlay: #7f849c;
+    --overlay-hover: rgba(147, 153, 178, 0.2);
+    --base-light: #eff1f5;
+    --mantle-light: #e6e9ef;
+    --crust-light: #dce0e8;
+    --text-light: #4c4f69;
+    --headers-light: #6c6f85;
+    --links-light: #1e66f5;
+    --overlay-light: #8c8fa1;
+    --overlay-light-hover: rgb(124, 127, 147);
+    --yellow: #df8e1d;
+    --yellow-alt: #f9e2af;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    text-rendering: optimizeLegibility;
+    line-height: 1.6;
+    margin: 30px 10px;
+    background: var(--base);
+    color: var(--text);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.fakeout {
+    padding: 1rem;
+    background: var(--crust);
+    border-radius: 8px;
+    box-shadow: 0 0 20px var(--mantle);
+    color: var(--text);
+    max-width: 920px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3rem;
+}
+
+.lighter-theme {
+  background: var(--base-light);
+}
+
+.light-theme {
+    background: var(--base-light);
+    color: var(--text-light);
+}
+
+.light-theme header, .light-theme h1, .light-theme h2 {
+    color: var(--headers-light);
+    text-shadow: 0 0 3px var(--overlay-light);
+}
+
+.light-theme a {
+    color: var(--links-light);
+}
+
+header, h1, h2 {
+    text-align: center;
+}
+
+header, h1, h2 {
+    color: var(--headers);
+    text-shadow: 0 0 3px var(--overlay-hover);
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+.contact-info, .portfolio {
+    margin-top: 20px;
+}
+
+.projectos {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.projectos li {
+    background: var(--overlay);
+    padding: 15px;
+    border-radius: 5px;
+    margin: 0 0 20px;
+    width: calc(48% - 20px);
+    box-sizing: border-box;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.projectos li:hover {
+    background: var(--overlay-hover);
+}
+
+.light-theme .projectos li {
+    background: var(--overlay-light);
+}
+
+.light-theme .projectos li:hover {
+    background: var(--overlay-hover);
+}
+
+a {
+    text-decoration: none;
+    color: var(--links);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.toggrealheader {
+    width: 100%;
+    border-bottom: 1.5px solid var(--mantle-light);
+    position: fixed;
+    top: 0px;
+    left: 0;
+    backdrop-filter: blur(10px);
+    height: 33px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.1));
+}
+
+.lighter-theme .toggrealheader {
+    border-bottom: 1.5px solid var(--mantle);
+}
+
+.toggle-theme-container {
+    position: fixed;
+    top: 2px;
+    right: 32px;
+    display: flex;
+    align-items: center;
+}
+
+.toggle-theme {
+    background: var(--yellow-alt);
+    border: none;
+    border-radius: 20px;
+    width: 50px;
+    height: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    outline: none;
+    overflow: hidden;
+    transition: background 0.3s ease;
+}
+
+.toggle-theme .slider {
+    position: relative;
+    width: 200%;
+    height: 100%;
+    border-radius: 20px;
+    background: var(--overlay-light-hover);
+    transition: transform 0.3s ease;
+}
+
+.toggle-theme .slider:before {
+    content: '';
+    position: absolute;
+    width: 55%;
+    height: 100%;
+    /*background: #2c3e50;*/
+    transition: transform 0.3s ease;
+}
+
+.light-theme .toggle-theme .slider:before {
+    transform: translateX(100%);
+}
+
+@media screen and (max-width: 768px) {
+  .projectos li {
+    width: 100%;
+  }
+}

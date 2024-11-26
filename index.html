@@ -10,177 +10,17 @@
     <meta property="og:title" content="Ami's Personal Webpage">
     <meta property="og:site_name" content="sleepingami.github.io">
     <link rel="icon" type="image/png" href="https://firebasestorage.googleapis.com/v0/b/hydraulisc.appspot.com/o/143962821.png?alt=media&token=9b0db058-ca28-4bf7-9c48-e35b2a9d7344">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            margin: 30px 10px;
-            background: rgba(0, 0, 0, 0.6);
-            color: #b4befe;
-            transition: background 0.3s ease, color 0.3s ease;
-        }
-
-        .fakeout {
-            padding: 1rem;
-            background: #1e1e2e;
-            border-radius: 8px;
-            box-shadow: 0 0 20px rgba(17, 17, 27, 0.75);
-            color: #b4befe;
-            max-width: 920px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 3rem;
-        }
-
-        .lighter-theme {
-          background: #eff1f5;
-        }
-        
-        .light-theme {
-            background: #dce0e8;
-            color: #7287fd;
-        }
-
-        .light-theme header, .light-theme h1, .light-theme h2 {
-            background: #dce0e8;
-            color: #7287fd;
-            text-shadow: 0 0 3px #7287fd;
-        }
-
-        .light-theme a {
-            color: #006880;
-        }
-
-        header, h1, h2 {
-            text-align: center;
-        }
-
-        header, h1, h2 {
-            color: #b4befe;
-            text-shadow: 0 0 3px #b4befe;
-        }
-
-        p {
-            margin-bottom: 20px;
-        }
-
-        .contact-info, .portfolio {
-            margin-top: 20px;
-        }
-
-        .projectos {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-
-        .projectos li {
-            background: #6c7086;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 0 0 20px;
-            width: calc(48% - 20px);
-            box-sizing: border-box;
-            cursor: pointer;
-            text-align: center;
-            transition: background 0.3s ease;
-        }
-
-        .projectos li:hover {
-            background: rgba(17, 17, 27, 0.75);
-        }
-
-        a {
-            text-decoration: none;
-            color: #3498db;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .toggrealheader {
-            width: 100%;
-            border-bottom: 1.5px solid #000;
-            position: fixed;
-            top: 0px;
-            left: 0;
-            backdrop-filter: blur(10px);
-            height: 33px;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.1));
-        }
-        
-        .toggle-theme-container {
-            position: fixed;
-            top: 2px;
-            right: 32px;
-            display: flex;
-            align-items: center;
-        }
-
-        .toggle-theme {
-            background: #ecf0f1;
-            border: none;
-            border-radius: 20px;
-            width: 50px;
-            height: 25px;
-            margin-left: 10px;
-            margin-right: 10px;
-            cursor: pointer;
-            outline: none;
-            overflow: hidden;
-            transition: background 0.3s ease;
-        }
-
-        .toggle-theme .slider {
-            position: relative;
-            width: 200%;
-            height: 100%;
-            border-radius: 20px;
-            background: #2c3e50;
-            transition: transform 0.3s ease;
-        }
-
-        .toggle-theme .slider:before {
-            content: '';
-            position: absolute;
-            width: 50%;
-            height: 100%;
-            border-radius: 20px;
-            background: #3498db;
-            transition: transform 0.3s ease;
-        }
-
-        .light-theme .toggle-theme .slider {
-            background: #ecf0f1;
-        }
-
-        .light-theme .toggle-theme .slider:before {
-            transform: translateX(100%);
-        }
-
-        .toggle-theme:hover {
-            background: #297fb99f;
-        }
-
-        @media screen and (max-width: 768px) {
-          .projectos li {
-            width: 100%;
-          }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <noscript>yo waddup this site relies 90% on JS so pls enable.</noscript>
     <div class="toggrealheader">
         <div class="toggle-theme-container">
             <svg width="28px" height="28px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"/>
                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-                <g id="SVGRepo_iconCarrier"><path d="M3.32031 11.6835C3.32031 16.6541 7.34975 20.6835 12.3203 20.6835C16.1075 20.6835 19.3483 18.3443 20.6768 15.032C19.6402 15.4486 18.5059 15.6834 17.3203 15.6834C12.3497 15.6834 8.32031 11.654 8.32031 6.68342C8.32031 5.50338 8.55165 4.36259 8.96453 3.32996C5.65605 4.66028 3.32031 7.89912 3.32031 11.6835Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>
+                <g id="SVGRepo_iconCarrier"><path d="M3.32031 11.6835C3.32031 16.6541 7.34975 20.6835 12.3203 20.6835C16.1075 20.6835 19.3483 18.3443 20.6768 15.032C19.6402 15.4486 18.5059 15.6834 17.3203 15.6834C12.3497 15.6834 8.32031 11.654 8.32031 6.68342C8.32031 5.50338 8.55165 4.36259 8.96453 3.32996C5.65605 4.66028 3.32031 7.89912 3.32031 11.6835Z" stroke="var(--overlay-light-hover)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>
             </svg>
             <label class="toggle-theme" onclick="toggleTheme()">
                 <div class="slider"></div>
@@ -188,7 +28,7 @@
             <svg width="28px" height="28px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"/>
                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-                <g id="SVGRepo_iconCarrier"> <path d="M12 3V4M12 20V21M4 12H3M6.31412 6.31412L5.5 5.5M17.6859 6.31412L18.5 5.5M6.31412 17.69L5.5 18.5001M17.6859 17.69L18.5 18.5001M21 12H20M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> </g>
+                <g id="SVGRepo_iconCarrier"> <path d="M12 3V4M12 20V21M4 12H3M6.31412 6.31412L5.5 5.5M17.6859 6.31412L18.5 5.5M6.31412 17.69L5.5 18.5001M17.6859 17.69L18.5 18.5001M21 12H20M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z" stroke="var(--yellow)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> </g>
             </svg>
         </div>
     </div>
@@ -196,13 +36,15 @@
   <div class="fakeout">
 
       <header>
-          <h1>Hello, I'm Ami!</h1>
+          <h1>Haiii~</h1>
+          <h2>I'm Ami</h2>
           <p>AKA: SleepingAmi, SleepyAmi</p>
       </header>
   
       <section>
           <h2>About Me</h2>
-          <p>I'm an asexual female programmer, and I go by the pronouns they/them. I have been developing full-stack for 2 years now, and I've contributed to various projects.</p>
+          <p>I'm a transexual female programmer, and my preferred pronouns are they/them. I have been developing full-stack for over 2 years now, and I've contributed to various projects.</p>
+          <p>I strongly believe in individual privacy and independent security as a right, so I tend to make my projects Free and Open Source. <a href="https://ko-fi.com/SleepingAmi" target="_blank">Consider Donating</a> if you like my work :)</p>
           <p>Fun Facts:
               <ul>
                   <li>Cute anime programmer</li>
@@ -217,37 +59,29 @@
           <h2>Portfolio</h2>
           <ul class="portfolio">
               <li>Owner and Founder of The Hydraulisc Network</li>
-              <li>Waitress at A Café (2021-2024)</li>
-              <li>Developer at Bottombots (2024)</li>
-              <li>Developer of the Virtual Waifu DLC Discord Bot (Virtual Waifu Bootleg?)</li>
+              <li>Creator of the idea of Linkpen</li>
+              <li>Developer of a lot of Discord Bots. Seriously, a lot.</li>
           </ul>
       </section>
 
       <section>
           <h2>Projects</h2>
           <ul class="projectos">
-              <li onclick="redirectPage('https://discord.com/oauth2/authorize?client_id=1231985408028573841&scope=bot%20applications.commands&permissions=388294')">Waifu DLC</li>
+              <li onclick="redirectPage('https://linkpen.xyz')">linkpen</li>
               <li onclick="redirectPage('https://hydraulisc.net/welcome')">Hydraulisc</li>
               <li onclick="redirectPage('https://starplace.onrender.com')">StarPlace</li>
-              <li onclick="redirectPage('https://about.hydraulisc.net')">PocketLive</li>
+              <li onclick="redirectPage('https://discord.com/oauth2/authorize?client_id=1311048151922245673&scope=bot%20applications.commands&permissions=388294')">Herleif</li>
+              <li onclick="redirectPage('https://discord.com/oauth2/authorize?client_id=1231985408028573841&scope=bot%20applications.commands&permissions=388294')">Waifu DLC</li>
+              <li onclick="redirectPage('https://discord.com/oauth2/authorize?client_id=1311049185956728933&scope=bot%20applications.commands&permissions=388294')">Helína</li>
           </ul>
       </section>
   
       <section class="contact-info">
           <h2>Contact</h2>
-          <p>Contact me via email on <a href="mailto:sleeping.ami@hydraulisc.net">sleeping.ami@hydraulisc.net</a></p>
-          <p>Find me on:
-              <ul>
-                  <li><a href="https://instagram.com/sleeping.ami" target="_blank">Instagram</a> and <a href="https://www.threads.net/@sleeping.ami" target="_blank">Threads</a>: @sleeping.ami</li>
-                  <li>Hydraulisc: <a href="https://hydraulisc.net/user/MupH0078JgXlk3TDZ5L6Wsaz2mf1" target="_blank">@sleepingami#0001</a></li>
-                  <li>Fediverse: <a href="https://miruku.cafe/@SleepingAmi" target="_blank">@SleepingAmi@miruku.cafe</a></li>
-                  <li>Matrix: @sleepingami:miruku.cafe</li>
-                  <li>Discord: @sleepingami</li>
-              </ul>
-          </p>
+          <p>My socials can be found on my <a href="https://linkpen.xyz/SleepingAmi" target="_blank">linkpen</a>.<br>Contact me via email on <a href="mailto:ami@miruku.cafe">ami@miruku.cafe</a>.</p>
           <br>
           <div style="text-align: center;">
-              <p style="font-size: small;"><i>Site made (I believe) using a modified version of the Catppuccin Mocha (for the Dark Theme) and Catppuccin Latte (for the Light Theme) themes. Maybe. Not 100% sure.</i></p>
+              <p style="font-size: 10px; font-weight: 600;"><i>Site made using modified versions of the Catppuccin Mocha (for the Dark Theme) and Catppuccin Latte (for the Light Theme) themes. Maybe. Not 100% sure.</i></p>
           </div>
       </section>
   </div>
