@@ -178,8 +178,61 @@ a:hover {
     transform: translateX(100%);
 }
 
+summary {
+    cursor: pointer;
+}
+
+.cryptos {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.cryptos-a {
+    display: grid;
+    justify-content: center;
+    gap: 1rem;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 64rem;
+}
+
+.cryptos-b {
+    padding: .5rem;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+.borderless {
+    width: auto;
+    height: auto;
+    padding: .2em;
+    margin: -.2em 0;
+    border-radius: 8px;
+    font-size: 90%;
+    text-indent: 0;
+    white-space: pre-wrap;
+    border: 1px solid var(--mantle);
+    background-color: grey;
+    user-select: text;
+    text-rendering: optimizeLegibility;
+    word-wrap: break-word;
+}
+
 @media screen and (max-width: 768px) {
   .projectos li {
     width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .cryptos-a {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
