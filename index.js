@@ -2,6 +2,10 @@ function redirectPage(link) {
     window.open(link, '_blank');
 }
 
+function redirectWindow(link) {
+    location.href = link;
+}
+
 function toggleTheme() {
       const body = document.body;
       const fakeout = document.querySelector('.fakeout');
