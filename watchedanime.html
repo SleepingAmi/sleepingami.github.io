@@ -11,15 +11,101 @@
     <meta property="og:site_name" content="sleepingami.github.io">
     <link rel="icon" type="image/png" href="https://pbt.hydraulisc.net/avatars/b7fc18398b37dcc25f21e1c2745fca7d">
     <link rel="stylesheet" href="style.css">
+    <style>
+    #grid {
+        padding-top: 60px;
+        padding-bottom: 60px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+    .post {
+        cursor: default;
+        background: var(--crust);
+        padding: 10px;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .post img {
+        max-width: 211px;
+        max-height: 211px;
+        min-width: 130px;
+        min-height: 166px;
+        width: auto;
+        height: auto;
+    }
+
+    .post time {
+      display: block;
+      color: #666;
+      font-size: 0.875rem;
+      margin-top: 0.5rem;
+    }
+  </style>
 </head>
 <body>
+    <noscript>
+        <div style="font-weight: 600; max-width: 100%; width: 90%; border-left: 4px solid red; background: #11111b; padding: 5px 9px 6px 10px; border-radius: 6px 0 0 6px;" role="alert">
+            <b>Javascript is disabled. Actions will not work.</b>
+        </div>
+    </noscript>
     <div>
-        <h1>&#x1F6A7; UNDER CONSTRUCTION &#128679;</h1>
-        <p style="text-align: center;">In the meantimes, check out the <a href="https://pbt.hydraulisc.net/user/24" target="_blank" rel="noopener noreferrer">Hydraulisc Account</a> listing the anime's I've watched!</p>
+        <h1>Ami's Anime Watch List</h1>
+        <div style="max-width: 100%; width: auto; text-align: center;">
+            <img src="https://about.hydraulisc.net/assets/icons/footer-badge.png" alt="">
+        </div>
+        <div style="text-align: center;">
+            <p style="margin-bottom: 0px;">Inspired by <a href="https://tallerthanshort.is-a.dev/myanimelist/" target="_blank" rel="noopener noreferrer">TallerThanShort's beautiful anime watch list</a>.</p>
+            <p style="margin-top: 0px; margin-bottom: 0px;">This section of the site is still a Work In Progress.</p>
+            <p style="margin-top: 0px;">In the meantimes, check out the <a href="https://pbt.hydraulisc.net/user/24" target="_blank" rel="noopener noreferrer">Hydraulisc Account</a> listing the anime's I've watched (Yes, this site interacts with the Hydraulisc API to fetch those anime and display them!)</p>
+        </div>
+        <div id="grid">Loading...</div>
         <ul class="projectos">
             <li onclick="redirectWindow('https://sleepingami.github.io')">Return Home</li>
         </ul>
     </div>
+    <script>
+    fetch('https://hydraulisc.net/api/24/posts')
+        .then(res => {
+            if (!res.ok) throw new Error('Failed to fetch posts');
+            return res.json();
+        })
+        .then(data => {
+            const grid = document.getElementById('grid');
+            grid.innerHTML = ''; // Clear "Loading..."
+
+            data.posts.forEach(post => {
+                const postDiv = document.createElement('div');
+                postDiv.className = 'post';
+
+                // Decode HTML entities (like &quot;)
+                const parser = new DOMParser();
+                const decodedTitle = parser.parseFromString(post.title, 'text/html').body.textContent;
+
+                // Extract quoted anime title and episode count
+                const match = decodedTitle.match(/"([^"]+)"\s*\(([^)]+)\)/);
+                let displayTitle = decodedTitle;
+                if (match) {
+                    displayTitle = `${match[1]} (${match[2]})`;
+                }
+
+                postDiv.innerHTML = `
+                    <img src="https://hydraulisc.net/${post.url}" alt="${displayTitle}" />
+                    <p>${displayTitle}</p>
+                `;
+
+                grid.appendChild(postDiv);
+            });
+
+
+        })
+        .catch(err => {
+            document.getElementById('grid').textContent = `Error: ${err.message}`;
+    });
+    </script>
     <script src="/index.js"></script>
 </body>
 </html>
