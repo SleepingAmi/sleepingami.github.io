@@ -128,6 +128,7 @@ a:hover {
     backdrop-filter: blur(10px);
     height: 33px;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.1));
+    z-index: 1;
 }
 
 .lighter-theme .toggrealheader {
@@ -205,24 +206,58 @@ summary {
 .cryptos-b {
     padding: .5rem;
     border-radius: 8px;
-    overflow: hidden;
     position: relative;
 }
 
 .borderless {
+    background-color: black;
+    color: white;
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 8px;
+    font-family: monospace;
+    overflow-x: auto;
+    overflow-y: auto;
+    white-space: pre;
+    position: relative;
+}
+
+.borderless pre {
+    padding: 0px 12px 0 12px;
+    margin: -20px 0 -30px 0;
+}
+
+#grid {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.post {
+    cursor: default;
+    background: var(--crust);
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.post img {
+    max-width: 211px;
+    max-height: 211px;
+    min-width: 130px;
+    min-height: 166px;
     width: auto;
     height: auto;
-    padding: .2em;
-    margin: -.2em 0;
-    border-radius: 8px;
-    font-size: 90%;
-    text-indent: 0;
-    white-space: pre-wrap;
-    border: 1px solid var(--mantle);
-    background-color: grey;
-    user-select: text;
-    text-rendering: optimizeLegibility;
-    word-wrap: break-word;
+}
+
+.post time {
+    display: block;
+    color: #666;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
 }
 
 @media screen and (max-width: 768px) {
