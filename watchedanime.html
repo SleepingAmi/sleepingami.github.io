@@ -21,17 +21,21 @@
     <div>
         <h1>Ami's Anime Watch List</h1>
         <div style="max-width: 100%; width: auto; text-align: center;">
-            <img src="https://about.hydraulisc.net/assets/icons/footer-badge.png" alt="">
+            <a href="https://hydraulisc.net">
+                <img src="https://about.hydraulisc.net/assets/icons/footer-badge.png" alt="">
+            </a>
         </div>
         <div style="text-align: center;">
             <p style="margin-bottom: 0px;">Inspired by <a href="https://tallerthanshort.is-a.dev/myanimelist/" target="_blank" rel="noopener noreferrer">TallerThanShort's beautiful anime watch list</a>.</p>
-            <p style="margin-top: 0px; margin-bottom: 0px;">This section of the site is still a Work In Progress.</p>
-            <p style="margin-top: 0px;">In the meantimes, check out the <a href="https://hydraulisc.net/user/24" target="_blank" rel="noopener noreferrer">Hydraulisc Account</a> listing the anime's I've watched (Yes, this site interacts with the Hydraulisc API to fetch those anime and display them!)</p>
+            <p style="margin-top: 0px; margin-bottom: 0px;">This section of the site serves a full response with no cache; each page load requests <i>all</i> the posts from the <a href="https://hydraulisc.net/user/24" target="_blank" rel="noopener noreferrer">Hydraulisc Account</a>.</p>
+            <p style="margin-top: 0px; font-size: small;">Yes, this site interacts with the Hydraulisc API to fetch the anime I've watched and display them!</p>
         </div>
         <div id="grid">Loading...</div>
-        <ul class="projectos">
-            <li onclick="redirectWindow('https://sleepingami.github.io')">Return Home</li>
-        </ul>
+        <div style="margin-left: auto; margin-right: auto; width: 100%;">
+            <div style="margin-left: auto; margin-right: auto; width: 50%; text-align: center;">
+                <span onclick="redirectWindow('https://sleepingami.github.io')" style="cursor: pointer; background-color: var(--overlay); padding: 1rem 2.2rem; color: #11111b; font-weight: 800; text-transform: capitalize; border-radius: 5px;">return home</span>
+            </div>
+        </div>
     </div>
     <script>
     fetch('https://hydraulisc.net/api/24/posts')
